@@ -3,6 +3,9 @@ Implementation of Triplet Neural Network, Triplet loss, and online mining on Pyt
 
 This code is inspired by Olivier Moindrot's blog post https://omoindrot.github.io/triplet-loss and his github repository https://github.com/omoindrot/tensorflow-triplet-loss, who implement the Triplet Neural Network with online mining on Tensorflow.
 
+My repository aims at implementing triplet loss with minimal amount of codes.
+See my Keras version here https://github.com/KinWaiCheuk/Triplet-net-keras (Navie mining version)
+
 # Dependencies
 pytorch 1.0
 
