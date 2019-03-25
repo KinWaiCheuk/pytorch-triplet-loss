@@ -22,3 +22,6 @@ All the required codes are contained inside the jupyter-notebook
 ### Use Triplet neural network to reduce the feature dimension from 10 to to
 Animation of the sample clusters after each epoch
 ![alt text](https://github.com/KinWaiCheuk/Triplet-net-pytorch/blob/master/10class.gif?raw=true)
+# To do
+Try my model in MNIST dataset
+Implement hard mining
