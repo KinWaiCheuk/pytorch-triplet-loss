@@ -24,4 +24,5 @@ Animation of the sample clusters after each epoch
 ![alt text](https://github.com/KinWaiCheuk/Triplet-net-pytorch/blob/master/10class.gif?raw=true)
 # To do
 Use real dataset like MNIST or CIFAR-10
+
 Implement hard mining
