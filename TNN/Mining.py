@@ -4,6 +4,15 @@ from itertools import permutations
 import numpy as np
 import torch
 
+"""
+This code is a re-implmentationm of the code written in Tensorflow
+https://omoindrot.github.io/triplet-loss
+https://github.com/omoindrot/tensorflow-triplet-loss
+
+All the doc strings and comments are from the original implmentation
+"""
+
+
 def offline(x,y,testsize=0.3,ap_pairs=10,an_pairs=10):
     data_xy = tuple([x,y])
 
@@ -221,7 +230,6 @@ def online_mine_hard(labels, embeddings, margin, squared=False, device='cpu'):
 
     # shape (batch_size, 1)
     hardest_positive_dist = torch.max(anchor_positive_dist, 1, keepdim=True)[0]
-#     tf.summary.scalar("hardest_positive_dist", tf.reduce_mean(hardest_positive_dist))
 
     # For each anchor, get the hardest negative
     # First, we need to get a mask for every valid negative (they should have different labels)
@@ -234,12 +242,8 @@ def online_mine_hard(labels, embeddings, margin, squared=False, device='cpu'):
 
     # shape (batch_size,)
     hardest_negative_dist = torch.min(anchor_negative_dist, 1, keepdim=True)[0]
-#     tf.summary.scalar("hardest_negative_dist", tf.reduce_mean(hardest_negative_dist))
 
     # Combine biggest d(a, p) and smallest d(a, n) into final triplet loss
-#     triplet_loss = tf.maximum(hardest_positive_dist - hardest_negative_dist + margin, 0.0)
-#     print("arg1 = ", )
-
     triplet_loss = torch.max(hardest_positive_dist - hardest_negative_dist + margin, torch.Tensor([0.0]).to(device))
     
     # Get final mean triplet loss
