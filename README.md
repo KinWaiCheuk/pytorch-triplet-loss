@@ -1,31 +1,22 @@
 # Triplet-net-pytorch
-Implementation of Triplet Neural Network, Triplet loss, and online mining on Pytorch
+Implementation of triplet loss, and online mining on Pytorch
 
-This code is inspired by Olivier Moindrot's blog post https://omoindrot.github.io/triplet-loss and his github repository https://github.com/omoindrot/tensorflow-triplet-loss, who implement the Triplet Neural Network with online mining on Tensorflow.
+This code is the a PyTorch implementation for Olivier Moindrot's blog post https://omoindrot.github.io/triplet-loss and his github repository https://github.com/omoindrot/tensorflow-triplet-loss, who implement the Triplet Neural Network with online mining on Tensorflow.
 
 My repository aims at implementing triplet loss with minimal amount of codes.
-See my Keras version here https://github.com/KinWaiCheuk/Triplet-net-keras (Navie mining version)
+See my Keras version here https://github.com/KinWaiCheuk/Triplet-net-keras (offline mining version)
+
+![alt text](https://github.com/KinWaiCheuk/Triplet-net-pytorch/blob/master/10class.gif?raw=true)
 
 # Dependencies
-pytorch 1.0
+pytorch >=1.3
 
-keras 2.2
+sklearn >=0.19.1
 
-sklearn 0.19.1
+matplotlib >=2.2.2
 
-matplotlib 2.2.2
-
-seaborn 0.9
+seaborn >=0.9
 
 # Instruction
 All the required codes are contained inside the jupyter-notebook
 
-# Summary
-
-### Use Triplet neural network to reduce the feature dimension from 10 to 2
-Animation of the sample clusters after each epoch
-![alt text](https://github.com/KinWaiCheuk/Triplet-net-pytorch/blob/master/10class.gif?raw=true)
-# To do
-Use real dataset like MNIST or CIFAR-10
-
-Implement hard mining
