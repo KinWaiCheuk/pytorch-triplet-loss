@@ -1,4 +1,4 @@
-# Triplet-net-pytorch
+# PyTorch Triplet Loss and Online Mining
 Implementation of triplet loss, and online mining on Pytorch
 
 This code is a PyTorch implementation of Olivier Moindrot's blog post https://omoindrot.github.io/triplet-loss and his github repository https://github.com/omoindrot/tensorflow-triplet-loss, who implement the triplet loss and online mining on Tensorflow.
