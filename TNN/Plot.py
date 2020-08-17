@@ -2,9 +2,10 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as PathEffects
+import os
 
 # Define our own plot function
-def scatter(x, labels, subtitle=None):
+def scatter(x, labels, root='plot', subtitle=None):
     
     num_classes = len(set(labels)) # Calculate the number of classes
     palette = np.array(sns.color_palette("hls", num_classes)) # Choosing color
@@ -35,4 +36,6 @@ def scatter(x, labels, subtitle=None):
     if subtitle != None:
         plt.suptitle(subtitle)
         
-    plt.savefig('./plot/' +str(subtitle))
+    if not os.path.exists(root):
+        os.makedirs(root)        
+    plt.savefig(os.path.join(root, str(subtitle)))
