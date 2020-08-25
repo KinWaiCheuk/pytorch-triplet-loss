@@ -5,7 +5,7 @@ import matplotlib.patheffects as PathEffects
 import os
 
 # Define our own plot function
-def scatter(x, labels, root='plot', subtitle=None):
+def scatter(x, labels, root='plot', subtitle=None, dataset='MNIST'):
     
     num_classes = len(set(labels)) # Calculate the number of classes
     palette = np.array(sns.color_palette("hls", num_classes)) # Choosing color
@@ -22,15 +22,23 @@ def scatter(x, labels, root='plot', subtitle=None):
     ## ---------------------------- ##
     
     ## Add label on top of each cluster ##
+    if dataset=='MNIST':
+        idx2name = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    elif dataset=='CIFAR10':
+        idx2name = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+    else:
+        raise Exception("Please specify the dataset")
+        
     txts = []
     for i in range(num_classes):
         # Position of each label.
         xtext, ytext = np.median(x[labels == i, :], axis=0)
-        txt = ax.text(xtext, ytext, str(i), fontsize=24)
+        txt = ax.text(xtext, ytext, idx2name[i], fontsize=24)
         txt.set_path_effects([
             PathEffects.Stroke(linewidth=5, foreground="w"),
             PathEffects.Normal()])
-        txts.append(txt)
+        txts.append(txt)        
+        
     ## ---------------------------- ##    
         
     if subtitle != None:
